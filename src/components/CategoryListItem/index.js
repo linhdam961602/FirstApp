@@ -3,10 +3,12 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 
 import Paw from '../../../assets/imgs/paw.png';
 
-function CategoryListItem() {
+function CategoryListItem(props) {
+  const { category } = props;
+
   return (
     <View style={styles.item}>
-      <Text style={styles.title}>CategoryItem</Text>
+      <Text style={styles.title}>{category.title}</Text>
       <Image source={Paw} style={styles.categoryImg} />
     </View>
   );
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    // flex: 0.25,
+    flex: 0.25,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
